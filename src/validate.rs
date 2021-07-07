@@ -165,6 +165,7 @@ impl Org<'_> {
                 | Element::Text { .. }
                 | Element::Timestamp(_)
                 | Element::Verbatim { .. }
+                | Element::Latex { .. }
                 | Element::FnDef(_)
                 | Element::Clock(_)
                 | Element::Comment { .. }

@@ -82,6 +82,7 @@ pub enum Element<'a> {
     InlineCall(InlineCall<'a>),
     InlineSrc(InlineSrc<'a>),
     Keyword(Keyword<'a>),
+    Latex { value: Cow<'a, str> },
     Link(Link<'a>),
     List(List),
     ListItem(ListItem<'a>),
@@ -159,6 +160,9 @@ impl Element<'_> {
             InlineCall(e) => InlineCall(e.into_owned()),
             InlineSrc(e) => InlineSrc(e.into_owned()),
             Keyword(e) => Keyword(e.into_owned()),
+            Latex { value } => Latex {
+                value: value.into_owned().into()
+            },
             Link(e) => Link(e.into_owned()),
             List(e) => List(e),
             ListItem(e) => ListItem(e.into_owned()),

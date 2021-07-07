@@ -165,6 +165,7 @@ impl HtmlHandler<Error> for DefaultHtmlHandler {
                 write!(&mut w, "</span></span>")?;
             }
             Element::Verbatim { value } => write!(&mut w, "<code>{}</code>", HtmlEscape(value))?,
+            Element::Latex { value } => write!(&mut w, "\\({}\\)", HtmlEscape(value))?,
             Element::FnDef(_fn_def) => (),
             Element::Clock(_clock) => (),
             Element::Comment(_) => (),

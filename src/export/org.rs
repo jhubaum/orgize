@@ -129,6 +129,7 @@ impl OrgHandler<Error> for DefaultOrgHandler {
                 write_timestamp(&mut w, &timestamp)?;
             }
             Element::Verbatim { value } => write!(w, "={}=", value)?,
+            Element::Latex { value } => write!(w, "${}$", value)?,
             Element::FnDef(fn_def) => {
                 write_blank_lines(w, fn_def.post_blank)?;
             }

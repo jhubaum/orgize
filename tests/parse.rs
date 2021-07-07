@@ -16,9 +16,9 @@ macro_rules! test_suite {
 
 test_suite!(
     emphasis,
-    "*bold*, /italic/,\n_underlined_, =verbatim= and ~code~",
+    "*bold*, /italic/,\n_underlined_, =verbatim=, $latex$, and ~code~",
     "<main><section><p><b>bold</b>, <i>italic</i>,\n<u>underlined</u>, \
-     <code>verbatim</code> and <code>code</code></p></section></main>"
+     <code>verbatim</code>, \\(latex\\), and <code>code</code></p></section></main>"
 );
 
 test_suite!(

@@ -48,6 +48,9 @@ impl<'a> Emphasis<'a> {
             b'+' => Element::Strike,
             b'/' => Element::Italic,
             b'_' => Element::Underline,
+            b'$' => Element::Latex {
+                value: contents.into()
+            },
             b'=' => Element::Verbatim {
                 value: contents.into(),
             },

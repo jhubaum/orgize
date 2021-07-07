@@ -486,7 +486,7 @@ pub fn parse_inline<'a, T: ElementArena<'a>>(
                 Some(tail)
             }
         }
-        b'*' | b'+' | b'/' | b'_' | b'=' | b'~' => {
+        b'*' | b'+' | b'/' | b'_' | b'=' | b'~' | b'$'=> {
             let (tail, emphasis) = Emphasis::parse(contents, byte)?;
             let (element, content) = emphasis.into_element();
             let is_inline_container = match element {
