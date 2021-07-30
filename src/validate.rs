@@ -166,7 +166,6 @@ impl Org<'_> {
                 | Element::Timestamp(_)
                 | Element::Verbatim { .. }
                 | Element::Latex { .. }
-                | Element::FnDef(_)
                 | Element::Clock(_)
                 | Element::Comment { .. }
                 | Element::FixedWidth { .. }
@@ -183,6 +182,7 @@ impl Org<'_> {
                 | Element::QuoteBlock(_)
                 | Element::CenterBlock(_)
                 | Element::VerseBlock(_)
+                | Element::FnDef(_)
                 | Element::Paragraph { .. }
                 | Element::Section
                 | Element::Bold
